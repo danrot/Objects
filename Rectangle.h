@@ -3,26 +3,21 @@
 
 #include "Shape.h"
 
-static void rectangle_draw(void* obj);
-
-struct Rectangle {
-    void* super;
+typedef struct {
+    Shape* super;
     void (*draw) (void* obj);
-} RectangleClass = { &ShapeClass, &rectangle_draw };
+} Rectangle;
 
-struct RectangleObject {
-    struct Rectangle* pClass;
+typedef struct {
+    Rectangle* pClass;
     int x;
     int y;
     int w;
     int l;
-};
+} RectangleObject;
 
-struct RectangleObject* ro_construct();
+extern Rectangle RectangleClass;
 
-static void rectangle_draw(void* obj) {
-    struct RectangleObject* rectangle = (struct RectangleObject*) obj;
-    printf("Rectangle: %d, %d, %d, %d\n", rectangle->x, rectangle->y, rectangle->w, rectangle->l);
-}
+RectangleObject* ro_construct();
 #endif
 

@@ -1,24 +1,17 @@
 #ifndef SHAPE_H
 #define SHAPE_H
 
-#include <stdlib.h>
-#include <stdio.h>
-
-static void shape_draw(void* obj);
-
-struct Shape {
+typedef struct {
     void* super;
     void (*draw) (void* obj);
-} ShapeClass = { NULL, &shape_draw};
+} Shape;
 
-struct ShapeObject {
-    struct Shape* pClass;
-};
+typedef struct {
+    Shape* pClass;
+} ShapeObject;
 
-struct ShapeObject* so_construct();
+extern Shape ShapeClass;
 
-static void shape_draw(void* obj) {
-    printf("Shape cannot be drawn");
-}
+ShapeObject* so_construct();
 #endif
 
