@@ -1,10 +1,10 @@
-#include "Rectangle.h"
+#include "Square.h"
 
 int main(int argc, char** argv) {
-    RectangleObject* rectangle = ro_construct(1,2,3,4);
+    SquareObject* square = sqo_construct(1,2,3,4);
     
-    rectangle->pClass->draw(rectangle);
+    square->pClass->draw(square);
     
-    rectangle->pClass->super->draw(rectangle);
+    square->pClass->super->draw(square);
 }
 
