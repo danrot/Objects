@@ -1,7 +1,9 @@
 #include "Square.h"
+#include <stdlib.h>
 
 int main(int argc, char** argv) {
-    SquareObject* square = sqo_construct(1,2,3,4);
+    SquareObject* square = (SquareObject*) malloc(sizeof(SquareObject));
+    sqo_construct(square, 1, 2, 3);
     
     square->pClass->draw(square);
     

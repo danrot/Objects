@@ -12,6 +12,6 @@ typedef struct {
 
 extern Shape ShapeClass;
 
-ShapeObject* so_construct();
+ShapeObject* so_construct(ShapeObject* obj);
 #endif
 

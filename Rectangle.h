@@ -18,6 +18,6 @@ typedef struct {
 
 extern Rectangle RectangleClass;
 
-RectangleObject* ro_construct();
+RectangleObject* ro_construct(RectangleObject* obj, int x, int y, int w, int l);
 #endif
 

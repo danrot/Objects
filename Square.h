@@ -18,6 +18,6 @@ typedef struct {
 
 extern Square SquareClass;
 
-SquareObject* sqo_construct();
+SquareObject* sqo_construct(SquareObject* obj, int x, int y, int w);
 #endif
 
